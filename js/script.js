@@ -15,12 +15,15 @@ new Vue({
                 return;
             }
             // activity = oggetto dentro l'array, per fare il confronto prendo la chiave di quell'oggetto.
+            // in questo caso, la chiave è "testo"
             const attivitaTrovata = this.activityList.some((activity) => {
                 return activity.testo.toLowerCase() === this.inputText.trim().toLowerCase();
             });
-            console.log(attivitaTrovata);
+            console.log(`L'attività è gia inserita nella lista? ${attivitaTrovata}`);
             // sottinteso che è true - cosi -> !attivitaTrovata --> false
             if (attivitaTrovata) {
+                alert("attività ripetuta, inserisci un'altra ");
+                this.inputText = "";
                 return;
             }
             this.activityList.push({
