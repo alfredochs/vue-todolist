@@ -11,8 +11,11 @@ new Vue({
     },
     methods: {
         addActivity() {
+            if (this.inputText.trim() === "") {
+                return;
+            }
             this.activityList.push({
-                testo: this.inputText
+                testo: this.inputText.trim()
             });
             this.inputText = "";
         },
