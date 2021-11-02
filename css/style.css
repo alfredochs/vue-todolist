@@ -16,16 +16,32 @@
 }
 
 .list-element{
-    border: 1px solid red;
+    border: 1px solid lightgray;
     display: flex;
     /* padding:10px 0 ; */
     border-radius: 5px;
+    align-items: center;
 }
 .list-element span{
     padding: 10px 0;
 }
 .left-line{
     width: 10px;
+    height: 40px;
     background-color: red;
     margin-right: 20px;
+}
+.close{
+    right: 0;
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 5px;
+}
+.close a {
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: 15px;
+    /* background-color: wheat; */
+    border: 1px solid lightgray;
+    border-radius: 5px;
 }

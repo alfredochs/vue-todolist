@@ -19,9 +19,12 @@
                 <input type="text" placeholder="Scrivi un'attività" v-model="inputText" v-on:keyup.enter="addActivity">
                 <button @click="addActivity">Aggiungi</button>
             </div>
-            <div class="list-element" v-for="attività in activityList">
+            <div class="list-element" v-for="(attività,indice) in activityList">
                 <div class="left-line"></div>
                 <span>{{attività.testo}}</span>
+                <div class="close">
+                    <a href="#" @click="deleteActivity(indice)">X</a>
+                </div>
             </div>
 
         </div>
