@@ -14,6 +14,15 @@ new Vue({
             if (this.inputText.trim() === "") {
                 return;
             }
+            // activity = oggetto dentro l'array, per fare il confronto prendo la chiave di quell'oggetto.
+            const attivitaTrovata = this.activityList.some((activity) => {
+                return activity.testo.toLowerCase() === this.inputText.trim().toLowerCase();
+            });
+            console.log(attivitaTrovata);
+            // sottinteso che è true - cosi -> !attivitaTrovata --> false
+            if (attivitaTrovata) {
+                return;
+            }
             this.activityList.push({
                 testo: this.inputText.trim()
             });
